@@ -1,0 +1,178 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>CG-5 | Home</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="home.css" />
+</head>
+
+<body>
+
+  <div class="app-shell">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <div class="identity">
+        <img src="cg5logo.jpeg" alt="CG-5 Logo" />
+
+        <div>
+          <strong>DCCGSIA</strong>
+          <span>Coast Guard Staff</span>
+        </div>
+      </div>
+
+      <nav aria-label="Main navigation">
+
+        <a class="active" href="home.html">
+          <span>⌂</span>
+          HOME
+        </a>
+
+        <a href="dashboard.html">
+          <span>▦</span>
+          CALENDAR
+        </a>
+
+      </nav>
+
+      <button class="logout" id="logout-button" type="button">
+        Logout
+      </button>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main>
+
+      <!-- HEADER -->
+      <header>
+
+        <div>
+          <p class="eyebrow">DCCGSIA / CG-5</p>
+
+          <h1>Welcome Back</h1>
+
+          <p class="intro">
+            Here's what's happening with your upcoming activities.
+          </p>
+        </div>
+
+        <div class="avatar" id="user-avatar">
+          CG
+        </div>
+
+      </header>
+
+
+      <!-- UPCOMING EVENT -->
+      <section class="hero-event" id="upcoming-event">
+
+        <div class="hero-event-content">
+
+          <p class="eyebrow" id="event-label">
+            UPCOMING EVENT
+          </p>
+
+          <h2 id="event-title">
+            Loading activity...
+          </h2>
+
+          <p id="event-description">
+            Please wait while we load the next scheduled activity.
+          </p>
+
+        </div>
+
+        <div class="hero-event-date">
+
+          <strong id="event-date">
+            —
+          </strong>
+
+          <span id="event-date-full">
+            —
+          </span>
+
+        </div>
+
+      </section>
+
+
+      <!-- UPCOMING ACTIVITIES -->
+      <section class="panel">
+
+        <div class="panel-header">
+
+          <div>
+            <p class="eyebrow">SCHEDULE</p>
+
+            <h3>
+        Activities
+            </h3>
+          </div>
+
+         <div class="month-navigation">
+
+  <button
+    type="button"
+    id="prev-month"
+    class="month-button"
+  >
+    ‹
+  </button>
+
+  <span id="month-label">
+    September
+  </span>
+
+  <button
+    type="button"
+    id="next-month"
+    class="month-button"
+  >
+    ›
+  </button>
+
+</div>
+
+        </div>
+
+
+        <div
+  class="activity-list"
+  id="monthly-activities"
+>
+
+          <div class="empty-state">
+            Loading activities...
+          </div>
+
+        </div>
+
+      </section>
+
+    </main>
+
+  </div>
+
+
+  <!-- SUPABASE -->
+  <<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="home.js"></script>
+
+</body>
+</html>

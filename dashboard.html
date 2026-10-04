@@ -1,0 +1,698 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>CG-5 Calendar of Activities</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="dashboard.css" />
+  </head>
+
+  <body>
+
+    <div class="app-shell">
+
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+
+        <div class="identity">
+
+          <img
+            src="cg5logo.jpeg"
+            alt="CG-5 logo"
+          />
+
+          <div>
+            <strong>CG-5 Portal</strong>
+            <span>International Affairs</span>
+          </div>
+
+        </div>
+
+
+<nav aria-label="Main navigation">
+
+  <a href="home.html">
+    <span>⌂</span>
+    HOME
+  </a>
+
+  <a href="admin.html">
+    <span>▣</span>
+    ADMIN
+  </a>
+
+  <a class="active" href="dashboard.html">
+    <span>▦</span>
+    CALENDAR
+  </a>
+
+</nav>
+
+
+        <a
+          class="logout"
+          href="index.html"
+        >
+          ← Log out
+        </a>
+
+      </aside>
+
+
+      <!-- MAIN CONTENT -->
+      <main>
+
+        <!-- HEADER -->
+        <header>
+
+          <div>
+
+            <p class="eyebrow">
+              CG-5 INTERNAL NATIONAL AFFAIRS, CG-5 PORTAL
+            </p>
+
+            <h1>
+              CALENDAR.
+            </h1>
+
+            <p class="intro">
+              Here is a quick overview of your international affairs activities.
+            </p>
+
+          </div>
+
+
+          <div
+            class="avatar"
+            aria-label="Admin user"
+          >
+            A
+          </div>
+
+        </header>
+
+
+        <!-- CONTENT -->
+        <section class="content-grid">
+
+
+          <!-- =========================================
+               CALENDAR OF ACTIVITIES
+               ========================================= -->
+
+          <article
+            class="panel"
+            id="duty-details"
+          >
+
+            <div class="panel-heading">
+
+              <div>
+
+                <p class="eyebrow">
+                  ACTIVITY CALENDAR
+                </p>
+
+                <h2>
+                  Calendar of Activities
+                </h2>
+
+              </div>
+
+            </div>
+
+
+            <!-- CALENDAR TOOLS -->
+            <div class="calendar-tools">
+
+              <label class="search">
+
+                <span>⌕</span>
+
+                <input
+                  id="duty-search"
+                  type="search"
+                  placeholder="Search activity or type"
+                />
+
+              </label>
+
+
+              <button
+                class="secondary-button"
+                id="clear-form"
+                type="button"
+              >
+                Add Activity
+              </button>
+
+            </div>
+
+
+            <!-- MONTH NAVIGATION -->
+            <div class="calendar-heading">
+
+              <button
+                id="previous-month"
+                type="button"
+                aria-label="Previous month"
+              >
+                ‹
+              </button>
+
+
+              <h3 id="calendar-month">
+                September 2026
+              </h3>
+
+
+              <button
+                id="next-month"
+                type="button"
+                aria-label="Next month"
+              >
+                ›
+              </button>
+
+            </div>
+
+
+            <!-- CALENDAR + DETAILS -->
+            <div class="calendar-layout">
+
+
+              <!-- CALENDAR -->
+              <div
+                class="calendar"
+                id="duty-calendar"
+                aria-label="Calendar of activities"
+              ></div>
+
+
+              <!-- ACTIVITY DETAILS -->
+              <aside
+                class="activity-details"
+                id="activity-details"
+              >
+
+                <div class="activity-details-header">
+
+                  <div>
+
+                    <p class="eyebrow">
+                      SELECTED ACTIVITY
+                    </p>
+
+                    <h3>
+                      Activity Details
+                    </h3>
+
+                  </div>
+
+
+                  <span
+                    class="activity-status"
+                    id="activity-status"
+                  >
+                    —
+                  </span>
+
+                </div>
+
+
+                <div
+                  class="activity-details-content"
+                  id="activity-details-content"
+                >
+
+                  <p class="activity-empty">
+                    Select an activity from the calendar to view its details.
+                  </p>
+
+                </div>
+
+
+                <div class="activity-details-actions">
+
+                  <button
+                    class="save-button"
+                    id="view-edit-activity"
+                    type="button"
+                    hidden
+                  >
+                    Edit Activity
+                  </button>
+
+                </div>
+
+              </aside>
+
+            </div>
+
+
+            <!-- ACTIVITY FORM -->
+            <form
+              class="duty-form"
+              id="duty-form"
+            >
+
+              <input
+                id="duty-id"
+                type="hidden"
+              />
+
+
+             <label>
+
+  Start Date
+
+  <input
+    id="duty-date"
+    type="date"
+    required
+  />
+
+</label>
+
+<label>
+  Hour
+  <input type="time" id="duty-start-time">
+</label>
+
+<label>
+
+  End Date
+
+  <input
+    id="duty-end-date"
+    type="date"
+  />
+
+</label>
+<label>
+
+                Activity Type
+
+                <select
+                  id="duty-type"
+                  required
+                >
+
+                  <option value="Inbound">
+                    Inbound
+                  </option>
+
+                  <option value="Outbound">
+                    Outbound
+                  </option>
+
+                </select>
+
+              </label>
+
+
+              <label>
+  Activity Name
+  <input
+    id="duty-name"
+    type="text"
+    placeholder="e.g. Courtesy Call"
+    required
+  />
+</label>
+
+<label>
+  Location
+  <input
+    id="duty-location"
+    type="text"
+    placeholder="e.g. Coast Guard Island"
+  />
+</label>
+<label>
+  List of Attendees
+  <textarea
+    id="duty-attendees"
+    rows="5"
+    placeholder="Enter one attendee per line"
+  ></textarea>
+</label>
+
+<label>
+  Attended by
+
+  <div class="attended-by-options">
+
+    <label class="attended-option">
+      <input
+        type="checkbox"
+        id="duty-attended-cpcg"
+        value="CPCG"
+      />
+      <span>CPCG</span>
+    </label>
+
+    <label class="attended-option">
+      <input
+        type="checkbox"
+        id="duty-attended-cg5"
+        value="CG-5"
+      />
+      <span>CG-5</span>
+    </label>
+
+  </div>
+</label>
+
+
+
+              <div class="form-actions">
+
+                <button
+                  class="save-button"
+                  id="add-duty"
+                  type="submit"
+                >
+                  Add Activity
+                </button>
+
+
+                <button
+                  class="save-button"
+                  id="update-duty"
+                  type="button"
+                  hidden
+                >
+                  Update Activity
+                </button>
+
+
+                <button
+                  class="delete-button"
+                  id="delete-duty"
+                  type="button"
+                  hidden
+                >
+                  Delete
+                </button>
+
+
+                <span
+                  id="form-message"
+                  role="status"
+                ></span>
+
+              </div>
+
+            </form>
+
+
+            <!-- SEARCH RESULTS -->
+            <div
+              class="search-results"
+              id="search-results"
+              hidden
+            ></div>
+
+
+            <p class="calendar-note">
+              Select an activity to view or edit its details.
+            </p>
+
+          </article>
+
+
+          <!-- =========================================
+               LEAVE STATUS
+               ========================================= -->
+
+          <article
+            class="panel"
+            id="documents"
+          >
+
+            <div class="panel-heading">
+
+              <div>
+
+                <p class="eyebrow">
+                  PERSONNEL STATUS
+                </p>
+
+                <h2>
+                  Leave Status
+                </h2>
+
+              </div>
+
+
+              <div class="leave-header-actions">
+
+                <button
+                  class="secondary-button"
+                  id="add-leave"
+                  type="button"
+                >
+                  + Add Leave
+                </button>
+
+
+                <button
+                  class="secondary-button"
+                  id="toggle-leave-edit"
+                  type="button"
+                >
+                  Edit
+                </button>
+
+              </div>
+
+            </div>
+
+
+            <!-- LEAVE LIST -->
+            <ul
+              class="documents"
+              id="leave-list"
+            ></ul>
+
+
+            <!-- LEAVE FORM -->
+            <form
+              class="leave-form"
+              id="leave-form"
+              hidden
+            >
+
+              <input
+                id="leave-id"
+                type="hidden"
+              />
+
+
+              <label>
+
+                Leave Type
+
+                <input
+                  id="leave-type"
+                  type="text"
+                  placeholder="e.g. RNR"
+                  required
+                />
+
+              </label>
+
+
+              <label>
+
+                Personnel Name
+
+                <input
+                  id="leave-name"
+                  type="text"
+                  placeholder="Enter name"
+                  required
+                />
+
+              </label>
+
+
+              <label>
+
+                Leave Period
+
+                <input
+                  id="leave-period"
+                  type="text"
+                  placeholder="e.g. 04 – 15 September 2026"
+                  required
+                />
+
+              </label>
+
+
+              <div class="form-actions">
+
+                <button
+                  class="save-button"
+                  id="save-leave"
+                  type="submit"
+                >
+                  Add Leave
+                </button>
+
+
+                <button
+                  class="delete-button"
+                  id="delete-leave"
+                  type="button"
+                  hidden
+                >
+                  Delete
+                </button>
+
+
+                <button
+                  class="cancel-button"
+                  id="cancel-leave"
+                  type="button"
+                >
+                  Cancel
+                </button>
+
+
+                <span
+                  id="leave-message"
+                  role="status"
+                ></span>
+
+              </div>
+
+            </form>
+
+          </article>
+
+        </section>
+
+
+        <!-- =========================================
+             KEY CONTACTS
+             ========================================= -->
+
+        <section
+          class="panel contacts"
+          id="contacts"
+        >
+
+          <div class="panel-heading">
+
+            <div>
+
+              <p class="eyebrow">
+                PARTNER DIRECTORY
+              </p>
+
+              <h2>
+                Key Contacts
+              </h2>
+
+            </div>
+
+          </div>
+
+
+          <div class="contact-list">
+
+
+            <div>
+
+              <span class="person">
+                IS
+              </span>
+
+              <p>
+
+                <b>
+                  SN2 Ian S Ehurango PCG
+                </b>
+
+                <small>
+                  Technical Expert
+                </small>
+
+              </p>
+
+            </div>
+
+
+            <div>
+
+              <span class="person">
+                JL
+              </span>
+
+              <p>
+
+                <b>
+                  SN2 John Mark E Lopez PCG
+                </b>
+
+                <small>
+                  The Maoy Guy
+                </small>
+
+              </p>
+
+            </div>
+
+
+            <div>
+
+              <span class="person">
+                JBL
+              </span>
+
+              <p>
+
+                <b>
+                  SW2 Joylyn B Labordo PCG
+                </b>
+
+                <small>
+                  Janitor
+                </small>
+
+              </p>
+
+            </div>
+
+
+          </div>
+
+        </section>
+
+      </main>
+
+    </div>
+
+
+    <!-- SCRIPTS -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script src="dashboard.js"></script>
+
+  </body>
+</html>
+```
